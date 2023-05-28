@@ -1,0 +1,22 @@
+<div class= 'd-flex container flex-column mt-5'>
+  <h3 class='mb-3'><%= @recipe.title %></h1>
+
+  <% if @recipe.fields[:chef].present? %>
+    <div class='mb-3'>
+      <strong> By: </strong>
+      <%= @recipe.chef.name  %>
+    </div>
+  <% end %>
+
+  <img src=<%= @recipe.photo.https_url %> class="img-fluid mb-3" alt="recipe image" height='500' width='500'>
+  <div class='mb-3'>
+    <%= markdown(@recipe.description)%>
+  <div>
+
+  <% if @recipe.fields[:tags].present? %>
+    <div>
+      <strong> Tags: </strong>
+      <%= render partial: 'tag', collection: @recipe.tags, as: :tag %>
+    <div>
+  <% end %>
+<div>

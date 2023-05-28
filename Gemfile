@@ -40,7 +40,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[ mri mingw x64_mingw ]
@@ -60,3 +60,11 @@ end
 
 # Ruby client for contentful api
 gem 'contentful'
+
+# Library for styling
+gem 'bootstrap'
+
+gem 'jquery-rails'
+
+# Markdown processer
+gem 'redcarpet'

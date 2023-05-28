@@ -1,0 +1,8 @@
+<%= link_to recipe_path(recipe.id), class: 'link-without-decor' do %>
+  <div class="card" style="width: 18rem;">
+    <img src=<%= recipe.photo.https_url %> class="card-img-top" alt="recipe image">
+    <div class="card-body">
+      <h5 class="card-title"><%= short_title(recipe.title) %></h5>
+    </div>
+  </div>
+<% end %>
