@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
     @recipe = if @recipes.present?
       @recipes.find { |recipe| recipe.id.eql?(params[:id]) }
     else
-      CONTENTFUL.entry(params[:id])
+      handle_exception { CONTENTFUL.entry(params[:id]) }
     end
   end
 
@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
 
   def set_recipes
     @recipes = Rails.cache.fetch('recipes_data', expires_in: 7.days) do
-      CONTENTFUL.entries(content_type: 'recipe')
+      handle_exception { CONTENTFUL.entries(content_type: 'recipe') }
     end
   end
 

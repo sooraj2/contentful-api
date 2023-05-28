@@ -1,0 +1,8 @@
+<% if flash.present? %>
+  <% flash.each do |key, value| %>
+    <%# Possible Keys: notice, success, error, alert, warning %>
+    <div id='error_explanation' class="flash alert <%= flash_class(key)%> text-start" role='alert'>
+      <li><%= value.html_safe %></li>
+    </div>
+  <% end %>
+<% end %>

@@ -4,3 +4,5 @@
 //= require bootstrap
 import "@hotwired/turbo-rails"
 import "controllers"
+
+$('.flash').fadeOut(1000);

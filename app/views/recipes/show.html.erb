@@ -1,7 +1,9 @@
+<% return if @recipe.blank? %>
+
 <div class= 'd-flex container flex-column mt-5'>
   <h3 class='mb-3'><%= @recipe.title %></h1>
 
-  <% if @recipe.fields[:chef].present? %>
+  <% if @recipe.chef.present? %>
     <div class='mb-3'>
       <strong> By: </strong>
       <%= @recipe.chef.name  %>
@@ -13,7 +15,7 @@
     <%= markdown(@recipe.description)%>
   <div>
 
-  <% if @recipe.fields[:tags].present? %>
+  <% if @recipe.tags.present? %>
     <div>
       <strong> Tags: </strong>
       <%= render partial: 'tag', collection: @recipe.tags, as: :tag %>
